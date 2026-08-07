@@ -179,3 +179,5 @@ scripts/
 
 # setuptools-scm writes this on install; never track.
 stable_pretraining/_version.py
+
+data/
