@@ -147,10 +147,14 @@ manager()
 
 # step5
 
-results = manager.validate()
+results = {
+    key: value.item() if isinstance(value, torch.Tensor) else value
+    for key, value in trainer.callback_metrics.items()
+    if key.startswith("eval/")
+}
 
 if results:
     print(f"{'Metric':<45} {'Value':>8}")
     print("-" * 55)
-    for key, val in sorted(results[0].items()):
+    for key, val in sorted(results.items()):
         print(f"{key:<45} {val:>8.4f}")
