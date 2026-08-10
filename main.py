@@ -1,3 +1,4 @@
+# 这个代码是从 examples/simclr_cifar10_tutorial.ipynb 中抽取出来的
 
 import torch
 import torch.nn as nn
